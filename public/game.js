@@ -214,14 +214,20 @@ if (!userEmail) {
     }
 }
 
-// Add event listener for start button
-const startBtn = document.getElementById('startBtn');
-if (startBtn) {
-    startBtn.addEventListener('click', function() {
-        startOverlay.classList.add('hidden');
-        gameStarted = true;
-    });
-}
+// Add event listener for start button after DOMContentLoaded to ensure the element exists
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Start the game loop
+    gameLoop();
+    // Add event listener for start button
+    const startBtn = document.getElementById('startBtn');
+    if (startBtn) {
+        startBtn.addEventListener('click', function() {
+            startOverlay.classList.add('hidden');
+            gameStarted = true;
+        });
+    }
+});
 
 // Score tracking
 let highScores = getUserHighScores();
@@ -825,6 +831,14 @@ function drawWelcomeCartoon() {
 
 // Start the game
 document.addEventListener('DOMContentLoaded', function() {
-    // Start the game
+    // Start the game loop
     gameLoop();
+    // Add event listener for start button
+    const startBtn = document.getElementById('startBtn');
+    if (startBtn) {
+        startBtn.addEventListener('click', function() {
+            startOverlay.classList.add('hidden');
+            gameStarted = true;
+        });
+    }
 });
