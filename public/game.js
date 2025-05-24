@@ -214,6 +214,15 @@ if (!userEmail) {
     }
 }
 
+// Add event listener for start button
+const startBtn = document.getElementById('startBtn');
+if (startBtn) {
+    startBtn.addEventListener('click', function() {
+        startOverlay.classList.add('hidden');
+        gameStarted = true;
+    });
+}
+
 // Score tracking
 let highScores = getUserHighScores();
 
@@ -506,6 +515,7 @@ let obstacles = [];
 let score = 0;
 let gameOver = false;
 let currentGameSpeed = INITIAL_GAME_SPEED;
+let gameStarted = false;
 
 function resetGame() {
     donkey.reset();
