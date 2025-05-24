@@ -118,41 +118,41 @@ function showStart() {
 
 // Remove guest, start, and disconnect buttons from the DOM and all related logic
 // Only show a single connect wallet button on load
-signInOverlay.innerHTML = '<button id="walletBtn">Connect Wallet</button>';
-const walletBtnDynamic = document.getElementById('walletBtn');
+// signInOverlay.innerHTML = '<button id="walletBtn">Connect Wallet</button>';
+// const walletBtnDynamic = document.getElementById('walletBtn');
 
-walletBtnDynamic.onclick = async function() {
-    if (window.ethereum) {
-        try {
-            const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-            if (accounts && accounts.length > 0) {
-                userEmail = accounts[0].toLowerCase();
-                localStorage.setItem('userEmail', userEmail);
-                userDomain = await resolveMonadDomain(userEmail);
-                // Check NFT ownership
-                const hasNFT = await checkNFTOwnership();
-                if (hasNFT) {
-                    // Show main game screen
-                    signInOverlay.classList.add('hidden');
-                    startOverlay.classList.remove('hidden');
-                } else {
-                    // Show mint option
-                    signInOverlay.innerHTML = '<p style="color:white;">You need a Dangles NFT to play.</p><button id="mintBtn">Mint NFT</button>';
-                    document.getElementById('mintBtn').onclick = async function() {
-                        await mintNFT();
-                        // After mint, show main game
-                        signInOverlay.classList.add('hidden');
-                        startOverlay.classList.remove('hidden');
-                    };
-                }
-            }
-        } catch (err) {
-            alert('Wallet connection failed.');
-        }
-    } else {
-        alert('No Ethereum wallet found. Please install MetaMask.');
-    }
-};
+// walletBtnDynamic.onclick = async function() {
+//     if (window.ethereum) {
+//         try {
+//             const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+//             if (accounts && accounts.length > 0) {
+//                 userEmail = accounts[0].toLowerCase();
+//                 localStorage.setItem('userEmail', userEmail);
+//                 userDomain = await resolveMonadDomain(userEmail);
+//                 // Check NFT ownership
+//                 const hasNFT = await checkNFTOwnership();
+//                 if (hasNFT) {
+//                     // Show main game screen
+//                     signInOverlay.classList.add('hidden');
+//                     startOverlay.classList.remove('hidden');
+//                 } else {
+//                     // Show mint option
+//                     signInOverlay.innerHTML = '<p style="color:white;">You need a Dangles NFT to play.</p><button id="mintBtn">Mint NFT</button>';
+//                     document.getElementById('mintBtn').onclick = async function() {
+//                         await mintNFT();
+//                         // After mint, show main game
+//                         signInOverlay.classList.add('hidden');
+//                         startOverlay.classList.remove('hidden');
+//                     };
+//                 }
+//             }
+//         } catch (err) {
+//             alert('Wallet connection failed.');
+//         }
+//     } else {
+//         alert('No Ethereum wallet found. Please install MetaMask.');
+//     }
+// };
 
 // Ensure ethers is available globally
 if (typeof window.ethers === 'undefined') {
