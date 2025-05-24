@@ -1,3 +1,5 @@
+import donkeyCharacter from './donkeyCharacter.js';
+
 // Game constants
 const WINDOW_WIDTH = 800;
 const WINDOW_HEIGHT = 600;
