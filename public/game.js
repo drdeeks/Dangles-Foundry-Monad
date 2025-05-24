@@ -113,6 +113,15 @@ function showSignIn() {
 function showStart() {
     signInOverlay.classList.add('hidden');
     startOverlay.classList.remove('hidden');
+    // Move event listener here to guarantee it is always attached
+    const startBtn = document.getElementById('startBtn');
+    if (startBtn && !startBtn._listenerAdded) {
+        startBtn.addEventListener('click', function() {
+            startOverlay.classList.add('hidden');
+            gameStarted = true;
+        });
+        startBtn._listenerAdded = true;
+    }
     if (typeof userEmailSpan !== 'undefined') userEmailSpan.textContent = userEmail;
 }
 
@@ -213,21 +222,6 @@ if (!userEmail) {
         showStart();
     }
 }
-
-// Add event listener for start button after DOMContentLoaded to ensure the element exists
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Start the game loop
-    gameLoop();
-    // Add event listener for start button
-    const startBtn = document.getElementById('startBtn');
-    if (startBtn) {
-        startBtn.addEventListener('click', function() {
-            startOverlay.classList.add('hidden');
-            gameStarted = true;
-        });
-    }
-});
 
 // Score tracking
 let highScores = getUserHighScores();
