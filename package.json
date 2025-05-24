@@ -12,7 +12,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "mocha"
+    "test": "mocha",
+    "build": "vite build"
   },
   "dependencies": {
     "@onsol/tldparser": "^1.0.6",
@@ -26,6 +27,7 @@
     "nft.storage": "^7.2.0"
   },
   "devDependencies": {
-    "mocha": "^11.5.0"
+    "mocha": "^11.5.0",
+    "vite": "^6.3.5"
   }
 }

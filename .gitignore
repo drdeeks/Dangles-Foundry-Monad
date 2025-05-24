@@ -32,3 +32,4 @@ test-results/
 # Ignore metadata zone identifier files
 public/metadata/*.jpeg:Zone.Identifier
 public/metadata/*.json:Zone.Identifier
+.vercel
