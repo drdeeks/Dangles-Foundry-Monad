@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dangles: The Jumping Jackass</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="signInOverlay" class="overlay">
+        <h2 style="color:white;">Sign In</h2>
+        <!-- The wallet button will be injected by JS -->
+    </div>
+    <div id="startOverlay" class="overlay hidden">
+        <h2 style="color:white;">Welcome!</h2>
+        <button id="startBtn">Start Game</button>
+        <button id="disconnectBtn">Disconnect Wallet</button>
+    </div>
+    <div id="welcomeOverlay" class="overlay hidden">
+        <h2>Welcome to Dangles: The Jumping Jackass</h2>
+        <canvas id="welcomeCanvas" width="320" height="180"></canvas>
+        <p id="donkeyBackstory"></p>
+        <button id="proceedBtn">Continue</button>
+    </div>
+    <div id="game-container" style="position:relative; width:800px; margin:auto;">
+        <canvas id="gameCanvas"></canvas>
+    </div>
+    <script src="donkeyCharacter.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.8.1/dist/ethers.umd.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

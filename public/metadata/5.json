@@ -1,0 +1,27 @@
+{
+  "name": "Dangles #5",
+  "description": "Dangles is a good-natured but self-conscious donkey with extraordinarily long, swinging testicles. Known for his awkward but determined jumps, Dangles is a beloved character with a unique backstory and personality. See the game for more details!",
+  "image": "ipfs://QmZSm4E3KjwJ3xz7VSFH6ym9yePo7PZxWxMQeCHdYCSbUh/5.jpeg",
+  "attributes": [
+    {
+      "trait_type": "Age",
+      "value": 7
+    },
+    {
+      "trait_type": "Temperament",
+      "value": "Easily embarrased"
+    },
+    {
+      "trait_type": "Special Ability",
+      "value": "Airdrop Hunter"
+    },
+    {
+      "trait_type": "Weight",
+      "value": "Heavy"
+    },
+    {
+      "trait_type": "Height",
+      "value": "5.0 ft"
+    }
+  ]
+}
